@@ -17,10 +17,9 @@ int check_cycle(listint_t *list)
 	while (n2 && n2->next)
 	{
 		if (n1 == n2)
-			break;
+			return (1);
 		n1 = n1->next;
 		n2 = n2->next->next;
-		return (1);
 	}
 	return (0);
 }
