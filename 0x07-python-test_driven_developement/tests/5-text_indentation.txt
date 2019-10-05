@@ -1,0 +1,59 @@
+The ``text_indentation`` module
+==========================
+
+Using ``string``
+_ _ _ _ _ _ _ _ _ _
+
+The "text_indentation" module takes an argument and prints
+a text with newlines and specific punctuation.
+
+Use it:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(232434)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("asda? asdwe?? AWEWAD???")
+asda?
+<BLANKLINE>
+asdwe?
+<BLANKLINE>
+?
+<BLANKLINE>
+AWEWAD?
+<BLANKLINE>
+?
+<BLANKLINE>
+?
+
+>>> text_indentation("???")
+?
+<BLANKLINE>
+?
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?
+<BLANKLINE>
+
+>>> text_indentation('.......')
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
