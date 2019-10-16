@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def number_of_lines(filename=""):
+    """returns number of lines"""
     with open(filename) as fl:
         linum = 0
 
