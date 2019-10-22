@@ -25,11 +25,10 @@ class Base:
         """function that returns the JSON
         representation of an object (string)
         """
-        if type(list_dictionaries) is list:
-            if list_dictionaries is None or list_dictionaries is []:
-                return "[]"
-            string = json.dumps(list_dictionaries)
-            return string
+        if list_dictionaries is None or list_dictionaries is []:
+            return "[]"
+        string = json.dumps(list_dictionaries)
+        return string
 
     @classmethod
     def save_to_file(cls, list_objs):
