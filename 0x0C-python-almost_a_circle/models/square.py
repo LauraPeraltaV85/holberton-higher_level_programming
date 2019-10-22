@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Class square
+"""
+
+
 from models.rectangle import Rectangle
 
 
@@ -14,6 +19,7 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
+        """assignation"""
         self.width = value
         self.height = value
 
@@ -23,6 +29,7 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(*arg)
 
     def update(self, *args, **kwargs):
+        """uses args and kwargs"""
         a = ['id', 'size', 'x', 'y']
         count = 0
         if not args:
@@ -35,6 +42,7 @@ class Square(Rectangle):
                 count += 1
 
     def to_dictionary(self):
+        """to dictionary"""
         i = self.id
         s = self.size
         r = {"id": i, "size": s, "x": self.x, "y": self.y}
