@@ -91,5 +91,8 @@ class Rectangle(Base):
                 count += 1
 
     def to_dictionary(self):
-        r = vars(self)
+        i = self.id
+        w = self.width
+        h = self.height
+        r = {"id": i, "width": w, "height": h, "x": self.x, "y": self.y}
         return r
