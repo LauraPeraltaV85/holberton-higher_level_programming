@@ -47,7 +47,7 @@ class Base:
         (Python data structure) represented
         by a JSON string"""
         if json_string is None or json_string is []:
-            return "[]"
+            return []
         else:
             obj = json.loads(json_string)
             return obj
