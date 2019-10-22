@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Class base
+"""
+
 import json
 import csv
 
@@ -35,7 +39,7 @@ class Base:
         fn = cls.__name__ + ".json"
         if list_objs is not None:
             list_objs = [i.to_dictionary() for i in list_objs]
-        with open(fn, "w", encoding = 'utf-8') as fl:
+        with open(fn, "w", encoding='utf-8') as fl:
             fl.write(cls.to_json_string(list_objs))
 
     @staticmethod
@@ -51,6 +55,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """function dummy"""
         if cls.__name__ is "Rectangle":
             n = cls(1, 5, 6, 3, 10)
             n.update(**dictionary)
@@ -62,10 +67,12 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """function to load from json"""
         fn = cls.__name__ + ".json"
         n = 0
         if not fn:
             return "[]"
         else:
             with open(fn, 'r', encoding="utf-8") as f:
-                return [cls.create(**n) for n in cls.from_json_string(f.read())]
+                x = [cls.create(**n) for n in cls.from_json_string(f.read())]
+                return x
