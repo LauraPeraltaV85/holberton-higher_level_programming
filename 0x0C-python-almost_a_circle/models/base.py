@@ -56,13 +56,13 @@ class Base:
     def create(cls, **dictionary):
         """function dummy"""
         if cls.__name__ is "Rectangle":
-            n = cls(1, 5, 6, 3, 10)
+            n = cls(1, 1)
             n.update(**dictionary)
             return n
         if cls.__name__ is "Square":
             s = cls(1)
             s.update(**dictionary)
-            return n
+            return s
 
     @classmethod
     def load_from_file(cls):
