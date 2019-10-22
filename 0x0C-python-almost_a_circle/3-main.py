@@ -5,6 +5,7 @@ from models.rectangle import Rectangle
 if __name__ == "__main__":
 
     r1 = Rectangle(3, 2)
+    r1.area()
     print(r1.area())
 
     r2 = Rectangle(2, 10)
