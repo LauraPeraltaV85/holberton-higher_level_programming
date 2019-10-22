@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Class rectangle
+"""
+
+
 from models.base import Base
 
 
@@ -17,6 +22,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        """validation"""
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value < 0:
@@ -29,6 +35,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """validation"""
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value < 0:
@@ -41,6 +48,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """validation"""
         if type(value) is not int:
             raise TypeError('x must be an integer')
         if value < 0:
@@ -53,6 +61,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """validation"""
         if type(value) is not int:
             raise TypeError('y must be an integer')
         if value < 0:
@@ -65,6 +74,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """displays square #"""
         for c in range(self.y):
             print()
         for count in range(self.height):
@@ -75,10 +85,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """returns string"""
         arg_list = [self.id, self.x, self.y, self.width, self.height]
         return "[Rectangle] ({}) {}/{} - {}/{}".format(*arg_list)
 
     def update(self, *args, **kwargs):
+        """uses args and kwargs"""
         a = ['id', 'width', 'height', 'x', 'y']
         count = 0
         if not args:
@@ -91,6 +103,7 @@ class Rectangle(Base):
                 count += 1
 
     def to_dictionary(self):
+        """to dictionary"""
         i = self.id
         w = self.width
         h = self.height
