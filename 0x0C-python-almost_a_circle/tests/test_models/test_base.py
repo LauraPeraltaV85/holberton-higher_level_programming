@@ -60,7 +60,8 @@ class test_base(unittest.TestCase):
         """tests func from_json with set"""
         with self.assertRaises(TypeError) as e:
             Base.from_json_string({1, 2})
-        self.assertEqual("the JSON object must be str, not 'set'", str(e.exception))
+        self.assertEqual("the JSON object must be str, not 'set'",
+                         str(e.exception))
 
     def test_empty_list_to_file(self):
         """Test empty list for save_to_file method"""
@@ -72,7 +73,6 @@ class test_base(unittest.TestCase):
         """Test for multiple dicts in to_json_string."""
         lis = Base.to_json_string([{"a": 1}, {"b": 2}])
         self.assertEqual(type(lis), str)
-
 
     def test_32_from_json_string_list(self):
         """Test for from_json_method with list."""
