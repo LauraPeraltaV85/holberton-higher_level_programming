@@ -85,7 +85,7 @@ class test_base(unittest.TestCase):
         """Test for from_json_method with int."""
         with self.assertRaises(TypeError):
             Base.from_json_string(39)
-   
+
     def test_jsonstring_emptydict(self):
         """Test json with empty dict"""
         list_input = [{}]
