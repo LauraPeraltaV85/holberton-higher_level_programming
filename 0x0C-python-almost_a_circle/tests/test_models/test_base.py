@@ -64,22 +64,45 @@ class test_base(unittest.TestCase):
                          str(e.exception))
 
     def test_empty_list_to_file(self):
-        """Test empty list for save_to_file method"""
+        """tests empty list for save_to_file method"""
         Base.save_to_file([])
         with open("Base.json", "r") as file:
             self.assertEqual(file.read(), "[]")
 
     def test_json_list_dicts(self):
-        """Test for multiple dicts in to_json_string."""
+        """tests for multiple dicts in to_json_string."""
         lis = Base.to_json_string([{"a": 1}, {"b": 2}])
         self.assertEqual(type(lis), str)
 
-    def test_32_from_json_string_list(self):
-        """Test for from_json_method with list."""
+    def test_from_json_string_list(self):
+        """tests for list from_json_method."""
         with self.assertRaises(TypeError) as e:
             Base.from_json_string([1, 2, 3])
         self.assertEqual("the JSON object must be str, not 'list'",
                          str(e.exception))
+
+    def test_jsonstringerror(self):
+        """Test for from_json_method with int."""
+        with self.assertRaises(TypeError):
+            Base.from_json_string(39)
+   
+    def test_jsonstring_emptydict(self):
+        """Test json with empty dict"""
+        list_input = [{}]
+        json_list_input = Base.to_json_string(list_input)
+        listob = Base.from_json_string(json_list_input)
+        self.assertEqual(listob, [{}])
+
+    def test_json_from_none(self):
+        """test a none in a json string"""
+        ans = Base.to_json_string(None)
+        self.assertEqual(ans, "[]")
+
+    def test_saves_empty_list_in_file(self):
+        """test to save an empty list to a file"""
+        Base.save_to_file([])
+        with open("Base.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
 
 if __name__ == '__main__':
     unittest.main()
