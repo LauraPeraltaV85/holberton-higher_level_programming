@@ -10,7 +10,7 @@ if __name__ == "__main__":
                               passwd=argv[2], db=argv[3], charset="utf8")
     cur = db_dict.cursor()
     cur.execute("SELECT cities.id, cities.name, states.name FROM states\
- LEFT JOIN cities ON states.id = cities.state_id ORDER BY cities.id ASC")
+ JOIN cities ON states.id = cities.state_id ORDER BY cities.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
