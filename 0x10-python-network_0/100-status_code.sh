@@ -1,3 +1,3 @@
 #!/bin/bash
 # sends a request and displays only the status code of the response
-curl -sw "%{http_code}" $1
+curl -so /dev/null -w "%{http_code}" $1
