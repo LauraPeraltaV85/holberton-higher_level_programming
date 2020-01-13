@@ -5,8 +5,8 @@ if __name__ == "__main__":
     import urllib.request
     import urllib.parse
     import sys
-    url = argv[1]
-    values = {'email': argv[2]}
+    url = sys.argv[1]
+    values = {'email': sys.argv[2]}
 
     data = urllib.parse.urlencode(values)
     data = data.encode('utf-8')
