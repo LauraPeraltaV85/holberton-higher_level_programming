@@ -4,4 +4,3 @@ request to the Star Wars API"""
 if __name__ == "__main__":
     import requests
     import sys
-    
