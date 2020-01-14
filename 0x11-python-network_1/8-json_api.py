@@ -9,7 +9,7 @@ if __name__ == "__main__":
         q = sys.argv[1]
     else:
         q = ""
-    ques = {'q': ar}
+    ques = {'q': q}
     r = requests.post(url, data=ques)
     try:
         req = r.json()
