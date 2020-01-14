@@ -12,8 +12,9 @@ if __name__ == "__main__":
     ques = {'q': q}
     r = requests.post(url, data=ques)
     try:
+        r.raise_for_status()
         req = r.json()
-        if not req:
+        if len(req) == 0:
             print("No result")
         else:
             print("[{}] {}".format(req.get("id"), req.get("name")))
