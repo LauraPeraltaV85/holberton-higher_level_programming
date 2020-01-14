@@ -6,9 +6,9 @@ if __name__ == "__main__":
     import sys
     url = "http://0.0.0.0.5000/search_user"
     if len(sys.argv) > 1:
-        ar = sys.argv[1]
+        q = sys.argv[1]
     else:
-        ar = ""
+        q = ""
     ques = {'q': ar}
     r = requests.post(url, data=ques)
     try:
