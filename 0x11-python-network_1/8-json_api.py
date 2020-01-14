@@ -5,11 +5,12 @@ if __name__ == "__main__":
     import requests
     import sys
     url = "http://0.0.0.0.5000/search_user"
-    if sys.argv[1]:
-        q = sys.argv[1]
+    if len(sys.argv) > 1:
+        ar = sys.argv[1]
     else:
-        q = ""
-    r = requests.post(url, q=q)
+        ar = ""
+    ques = {'q': ar}
+    r = requests.post(url, data=ques)
     try:
         req = r.json()
         if not req:
