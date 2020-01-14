@@ -5,6 +5,7 @@ if __name__ == "__main__":
     import urllib.request
     import urllib.parse
     import urllib.error
+    import sys
     try:
         with urlib.request.urlopen(sys.argv[1]) as response:
             print(response.read())
