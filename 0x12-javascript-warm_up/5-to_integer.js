@@ -5,5 +5,5 @@ if (isNaN(num)) {
   console.log('Not a number');
 } else {
   Number(num);
-  console.log(num);
+  console.log('My number: ' + num);
 }
