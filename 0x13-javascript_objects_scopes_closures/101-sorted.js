@@ -1,5 +1,6 @@
 #!/usr/bin/node
 const dict = require('./101-data').dict;
+
 const listk = Object.keys(dict);
 const newdict = {};
 for (let con = 0; con < listk.length; con++) {
